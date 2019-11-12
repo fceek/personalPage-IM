@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: #333;
+  background-color: #272727;
   color: #fff;
   font-family: Calibri,sans-serif;
 }
@@ -26,12 +26,57 @@ body {
 }
 
 .wrapper-center {
-  padding-left: 540px;
+  padding-left: 560px;
 }
 
 .wrapper {
   height: 720px;
   padding-top: 290px;
+}
+
+.background {
+  position: absolute;
+  height: 1010px;
+  width: 100%;
+  z-index: -2;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  margin-left: -90px;
+}
+
+/* COMBAK: replace these colors with images */
+
+.sec-1 {
+  background-color: #123;
+  /*background-image: url(./resources/bgtemp.jpg);*/
+}
+
+.sec-2 {
+  background-color: #213;
+  /*background-image: url(./resources/bgtemp.jpg);*/
+}
+
+.sec-3 {
+  background-color: #113;
+  /*background-image: url(./resources/bgtemp.jpg);*/
+}
+
+.sec-4 {
+  background-color: #223;
+  /*background-image: url(./resources/bgtemp.jpg);*/
+}
+
+.sec-5 {
+  background-color: #133;
+  /*background-image: url(./resources/bgtemp.jpg);*/
+}
+
+
+.title h1 {
+  font-size: 48px;
+  padding-bottom: 60px;
 }
 
 /* logo */
@@ -70,11 +115,11 @@ body {
 
 .nav-list li:hover {
   box-shadow: 6px 6px 24px #fe9;
-  transform: scale(1.04);
+  transform: scale(1.06);
   color: #fe9;
 }
 
-.nav-list li.current {
+.nav-list a.current li {
   color: #ec3;
 }
 
@@ -85,20 +130,87 @@ body {
   font-family: azo-sans-uber,sans-serif;
 }
 
-/* body-home */
-
-.main-title h1{
-  color: #fff;
-  font-size: 48px;
-}
+/* home */
 
 .main-text {
   width: 480px;
-  padding-top: 60px;
 }
 
 .main-text p {
-  color: #fff;
   font-size: 14px;
   line-height: 24px;
+}
+
+/* video */
+
+.video-video {
+  background-color: #222;
+  width: 800px;
+  height: 450px;
+  float: left;
+}
+
+.video-video video {
+  width: 800px;
+}
+
+#prog-bar {
+  margin-top: -4px;
+  width: 800px;
+  height: 12px;
+  background-color: #000;
+}
+
+#prog {
+  width: 0;
+  height: 12px;
+  background-color: #fe9;
+}
+
+.video-control {
+  float: left;
+  width: 50px;
+  margin: 0 0 0 80px;
+  padding: 8px 4px 0 14px;
+  background-color: #000;
+}
+
+.control-stylus {
+  height: 8px;
+  background-color: #fff;
+  margin: 0 0 12px -10px;
+}
+
+.video-control button {
+  width: 42px;
+  height: 42px;
+  background-color: inherit;
+  border: none;
+  transition: transform .15s;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+.video-control button:hover {
+  transform: scale(1.13);
+}
+
+.video-control button img {
+  width: 36px;
+  height: 36px;
+}
+
+/* hobbies */
+
+.hobby-sec {
+  width: 300px;
+  float: left;
+  padding-right: 60px;
+}
+
+.hobby-sec img {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  z-index: -1;
 }

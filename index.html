@@ -5,11 +5,11 @@
     <link rel="stylesheet" href="https://use.typekit.net/ljj0mil.css">
     <link rel="stylesheet" href="./master.css">
     <script src="./nav.js" charset="utf-8"></script>
+    <script src="./control.js" charset="utf-8"></script>
     <title>Anonym ONE</title>
   </head>
   <body>
     <div class="container">
-      <div class="background"></div>
       <div class="wrapper-left">
         <div class="logo">
           <img src="sitelogo.gif" alt="Site logo">
@@ -17,7 +17,7 @@
         </div>
         <div class="nav">
           <ul class="nav-list">
-            <a href="#anchor_main"><li class="current">Home</li></a>
+            <a class="current" href="#anchor_main"><li>Home</li></a>
             <a href="#anchor_video"><li>Video</li></a>
             <a href="#anchor_hobbies"><li>Hobbies</li></a>
             <a href="#anchor_cw"><li>Coursework</li></a>
@@ -26,8 +26,11 @@
         </div>
       </div>
       <div class="wrapper-center">
+
+        <div class="background sec-1"></div>
+
         <div class="wrapper main" id="anchor_main">
-          <div class="main-title">
+          <div class="main title">
             <h1>The Anonymous Page</h1>
           </div>
           <div class="main-text">
@@ -37,15 +40,61 @@
 
           </div>
         </div>
+
+        <div class="background sec-2"></div>
+
         <div class="wrapper video" id="anchor_video">
-          A
+          <div class="video title">
+            <h1>The Introducion Video</h1>
+          </div>
+          <div class="wrapper-video">
+            <div class="video-video">
+              <video id="theVideo" src="./resources/testvideo.mp4" autoplay>
+              </video>
+              <div id="prog-bar">
+                <div id="prog"></div>
+              </div>
+            </div>
+            <div class="video-control">
+              <div class="control-stylus"></div>
+              <button type="button" id="play-pause" title="Play / Pause"><img src="./resources/play-button.png"></button>
+              <button type="button" id="mute-unmute" title="Mute / Unmute"><img src="./resources/mute.png"></button>
+              <button type="button" id="rewind" title="Rewind"><img src="./resources/refresh-button.png"></button>
+            </div>
+          </div>
         </div>
+
+        <div class="background sec-3"></div>
+
         <div class="wrapper hobbies" id="anchor_hobbies">
-          B
+          <div class="hobby title">
+            <h1>Some Invented Hobbies</h1>
+          </div>
+          <div class="hobby-sec hob-1">
+            <img src="./resources/sample.jpg" alt="">
+            <h1><span>//</span>Hobby 1</h1>
+            <p>Some explaining text</p>
+          </div>
+          <div class="hobby-sec hob-2">
+            <img src="./resources/sample.jpg" alt="">
+            <h1><span>//</span>Hobby 2</h1>
+            <p>Some explaining text</p>
+          </div>
+          <div class="hobby-sec hob-3">
+            <img src="./resources/sample.jpg" alt="">
+            <h1><span>//</span>Hobby 3</h1>
+            <p>Some explaining text</p>
+          </div>
         </div>
+
+        <div class="background sec-4"></div>
+
         <div class="wrapper cw" id="anchor_cw">
           C
         </div>
+
+        <div class="background sec-5"></div>
+
         <div class="wrapper animation" id="anchor_animation">
           D
         </div>
