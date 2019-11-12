@@ -18,6 +18,11 @@ body {
   font-family: Calibri,sans-serif;
 }
 
+a,
+button {
+  cursor: pointer;
+}
+
 .wrapper-left {
   padding-left: 120px;
   width: 300px;
@@ -26,7 +31,7 @@ body {
 }
 
 .wrapper-center {
-  padding-left: 560px;
+  margin-left: 560px;
 }
 
 .wrapper {
@@ -34,43 +39,50 @@ body {
   padding-top: 290px;
 }
 
+.background-layer0 {
+  position: absolute;
+  height: 5050px;
+  width: 100%;
+  background-image: url(./resources/bgtemp-darker.jpg);
+  z-index: -3;
+  margin-left: -90px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .background {
   position: absolute;
-  height: 1010px;
+  height: 800px;
   width: 100%;
   z-index: -2;
+
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  margin-left: -90px;
+  margin: 80px 0 0 -90px;
 }
 
 /* COMBAK: replace these colors with images */
 
 .sec-1 {
-  background-color: #123;
-  /*background-image: url(./resources/bgtemp.jpg);*/
+  background-image: url(./resources/bgtemp.jpg);
 }
 
 .sec-2 {
-  background-color: #213;
-  /*background-image: url(./resources/bgtemp.jpg);*/
+  background-image: url(./resources/bgtemp.jpg);
 }
 
 .sec-3 {
-  background-color: #113;
-  /*background-image: url(./resources/bgtemp.jpg);*/
+  background-image: url(./resources/bgtemp.jpg);
 }
 
 .sec-4 {
-  background-color: #223;
-  /*background-image: url(./resources/bgtemp.jpg);*/
+  background-image: url(./resources/bgtemp.jpg);
 }
 
 .sec-5 {
-  background-color: #133;
-  /*background-image: url(./resources/bgtemp.jpg);*/
+  background-image: url(./resources/bgtemp.jpg);
 }
 
 
@@ -188,7 +200,6 @@ body {
   border: none;
   transition: transform .15s;
   margin: 16px 0;
-  cursor: pointer;
 }
 
 .video-control button:hover {
@@ -206,11 +217,41 @@ body {
   width: 300px;
   float: left;
   padding-right: 60px;
+  padding-top: 30px;
 }
 
 .hobby-sec img {
   position: absolute;
-  width: 160px;
-  height: 160px;
+  width: 120px;
+  height: 120px;
   z-index: -1;
+  margin-top: -30px;
+  background-color: #000;
+}
+
+.hobby-sec h1 span {
+  font-size: 48px;
+  letter-spacing: -10px;
+  padding:0 12px;
+}
+
+.hobby-sec p {
+  padding: 18px 0 18px 12px;
+  width: 240px;
+}
+
+/* coursework */
+
+.cw .hobby-sec h1,
+.cw .hobby-sec a {
+  padding-left: 12px;
+}
+
+.cw .hobby-sec a {
+  text-decoration: none;
+  color: #fe9;
+}
+
+.cw .hobby-sec a:hover {
+  color: #ec3;
 }
