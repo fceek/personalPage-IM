@@ -5,6 +5,7 @@ let wrapperList;
 let navTop;
 let navShell;
 let paper;
+let theAudio;
 
 function changeCurrentShell(target) {
   return function() {
@@ -90,7 +91,7 @@ function bindControl() {
   window.addEventListener("resize",setPosition);
 
   paper = new Raphael(document.querySelector(".svg"),800,480);
-
+  theAudio = document.querySelector(".svg-audio audio");
   setProg();
 };
 

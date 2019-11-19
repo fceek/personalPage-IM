@@ -303,3 +303,7 @@ span.capital {
   height: 480px;
   background-color: #123;
 }
+
+.svg-audio {
+  display: none;
+}
