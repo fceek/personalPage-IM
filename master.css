@@ -10,12 +10,20 @@
 html {
   scroll-behavior: smooth;
   overflow: hidden;
+  height: 100%;
 }
 
 body {
   background-color: #272727;
   color: #fff;
   font-family: Calibri,sans-serif;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  min-width: 1300px;
 }
 
 a,
@@ -24,77 +32,70 @@ button {
 }
 
 .wrapper-left {
-  padding-left: 120px;
-  width: 300px;
+  padding-left: calc(30px + 3%);
+  width: 24%;
+  min-width: 280px;
   float: left;
   position: fixed;
+  height: 100%;
 }
 
 .wrapper-center {
-  margin-left: 560px;
+  margin-left: 30%;
+  height: 100%;
 }
 
 .wrapper {
-  height: 720px;
-  padding-top: 290px;
-}
-
-.background-layer0 {
-  position: absolute;
-  height: 5050px;
-  width: 100%;
-  background-image: url(./resources/bgtemp-darker.jpg);
-  z-index: -3;
-  margin-left: -90px;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-.background {
-  position: absolute;
-  height: 800px;
-  width: 100%;
-  z-index: -2;
-
-  background-repeat: no-repeat;
-  background-size: cover;
+  clear: both;
+  height: 100%;
+  background-color: #123;
+  margin-left: -100px;
+  padding-left: 100px;
   background-attachment: fixed;
   background-position: center;
-  margin: 80px 0 0 -90px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
-/* COMBAK: replace these colors with images */
-
-.sec-1 {
-  background-image: url(./resources/bgtemp.jpg);
-}
-
-.sec-2 {
-  background-image: url(./resources/bgtemp.jpg);
-}
-
-.sec-3 {
-  background-image: url(./resources/bgtemp.jpg);
-}
-
-.sec-4 {
-  background-image: url(./resources/bgtemp.jpg);
-}
-
-.sec-5 {
-  background-image: url(./resources/bgtemp.jpg);
-}
-
 
 .title h1 {
   font-size: 48px;
   padding-bottom: 60px;
 }
 
+.wrapper-main {
+  background-image: url(./resources/bg-main.jpg);
+}
+
+.wrapper-video {
+  background-image: url(./resources/bg-video.jpg);
+}
+
+.wrapper-hobbies {
+  background-image: url(./resources/bg-hobbies.jpg);
+}
+
+.wrapper-cw {
+  background-image: url(./resources/bg-cw.jpg);
+}
+
+.wrapper-animation {
+  background-image: url(./resources/bg-animation.jpg);
+}
+
+span.gold {
+  color: #ec3;
+}
+
 /* logo */
 
 .logo {
-  padding-top: 80px;
+  padding-top: 120px;
+}
+
+@media screen and (max-height: 830px) {
+  .logo {
+    padding-top: 60px;
+  }
 }
 
 .logo img {
@@ -111,15 +112,20 @@ button {
 
 /* navigate */
 
+.nav {
+  padding-top: 200px;
+}
+
 .nav-list {
   height: 400px;
-  padding-top: 160px;
   list-style: none;
+  width: 280px;
 }
 
 .nav-list li {
   height: 42px;
   width: fit-content;
+  display: table;
   padding: 10px 12px;
   background-color: #000;
   transition: transform .25s;
@@ -139,18 +145,36 @@ button {
   text-decoration: none;
   color: #fff;
   font-size: 32px;
+  width: 280px;
   font-family: azo-sans-uber,sans-serif;
 }
 
 /* home */
 
 .main-text {
-  width: 480px;
+  position: absolute;
+  width: 556px;
+  background-color: rgba(22,22,22,0.65);
+  z-index: 2;
+  margin: -386px 0 0 10px;
+  padding: 12px;
 }
 
 .main-text p {
   font-size: 14px;
   line-height: 24px;
+}
+
+.main-image img {
+  width: 600px;
+  height: auto;
+}
+
+.main-copyright {
+  position: absolute;
+  margin: -36px 0 0 390px;
+  padding: 6px;
+  background-color: rgba(22,22,22,0.65);
 }
 
 /* video */
@@ -187,6 +211,12 @@ button {
   background-color: #000;
 }
 
+@media screen and (max-width: 1360px) {
+  .video-control {
+    margin-left: 0;
+  }
+}
+
 .control-stylus {
   height: 8px;
   background-color: #fff;
@@ -214,44 +244,62 @@ button {
 /* hobbies */
 
 .hobby-sec {
-  width: 300px;
+  width: 240px;
+  height: 400px;
   float: left;
-  padding-right: 60px;
-  padding-top: 30px;
+  margin: 30px 60px 0 0;
+  background-color: rgba(255,238,119,0.2);
 }
 
 .hobby-sec img {
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  z-index: -1;
-  margin-top: -30px;
-  background-color: #000;
+  width: 240px;
+  height: auto;
 }
 
-.hobby-sec h1 span {
+span.capital {
   font-size: 48px;
   letter-spacing: -10px;
   padding:0 12px;
 }
 
+.hobby-sec h1 {
+  padding: 18px 0 0 12px;
+}
+
 .hobby-sec p {
-  padding: 18px 0 18px 12px;
-  width: 240px;
+  padding: 18px 0 0 18px;
+  width: 210px;
+  font-size: 18px;
+  color: #000;
 }
 
 /* coursework */
 
-.cw .hobby-sec h1,
-.cw .hobby-sec a {
-  padding-left: 12px;
+.wrapper-cw .hobby-sec h1,
+.wrapper-cw .hobby-sec a {
+  padding-left: 16px;
+  height: 72px;
 }
 
-.cw .hobby-sec a {
+.wrapper-cw .hobby-sec a {
   text-decoration: none;
   color: #fe9;
 }
 
-.cw .hobby-sec a:hover {
+.wrapper-cw .hobby-sec a:hover {
   color: #ec3;
+}
+
+.wrapper-cw .hobby-sec img {
+  width: 180px;
+  height: 150px;
+  margin: 48px 0 32px 30px;
+}
+
+/* animation */
+
+.svg {
+  width: 800px;
+  height: 480px;
+  background-color: #123;
 }

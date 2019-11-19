@@ -1,6 +1,10 @@
 document.addEventListener("DOMContentLoaded",handleDocumentLoad);
 
 let navList;
+let wrapperList;
+let navTop;
+let navShell;
+let paper;
 
 function changeCurrentShell(target) {
   return function() {
@@ -60,6 +64,9 @@ function progJump(e) {
 
 function bindControl() {
   navList = document.querySelectorAll(".nav-list a");
+  wrapperList = document.querySelectorAll(".title");
+  navTop = document.querySelector(".nav-list");
+  navShell = document.querySelector(".nav");
 
   for (var i=0; i<navList.length; i++) {
     navList[i].addEventListener("click",changeCurrentShell(i),false);
@@ -80,6 +87,10 @@ function bindControl() {
   progression = setInterval(setProg,300);
   progbar.addEventListener("click", progJump);
 
+  window.addEventListener("resize",setPosition);
+
+  paper = new Raphael(document.querySelector(".svg"),800,480);
+
   setProg();
 };
 
@@ -95,7 +106,25 @@ function setHighlight() {
   }
 }
 
+function setPosition() {
+  var h = document.documentElement.clientHeight;
+  if (h > 1200) {
+    navShell.style.paddingTop = 200 + "px";
+  } else if (h > 1040) {
+    navShell.style.paddingTop = 40 + (h - 1040) + "px";
+  } else {
+    navShell.style.paddingTop = 40 + "px";
+  }
+
+  let targetPadding = navTop.getBoundingClientRect().top;
+  for (var i=0; i<wrapperList.length; i++) {
+    wrapperList[i].style.paddingTop = targetPadding + "px";
+  }
+}
+
 function handleDocumentLoad() {
   bindControl();
+  setPosition();
   setHighlight();
+  svgReady();
 };
