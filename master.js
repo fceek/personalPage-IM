@@ -24,7 +24,7 @@ function changeCurrent(target) {
 };
 
 function playOrPause() {
-  if (entVideo.paused === true) {
+  if (entVideo.paused) {
     entVideo.play();
     ppButton.firstChild.src = "./resources/pause-button.png";
   }
@@ -36,7 +36,7 @@ function playOrPause() {
 }
 
 function muteOrUnmute() {
-  if (entVideo.muted === true) {
+  if (entVideo.muted) {
     entVideo.muted = false;
     muteButton.firstChild.src = "./resources/mute.png";
   }
@@ -46,6 +46,21 @@ function muteOrUnmute() {
   }
 }
 
+function muteAudioShell() {
+    if (theAudio.muted) {
+      theAudio.muted = false;
+      theAudioMute.firstChild.style.fontSize = 24 + "px";
+      theAudioMute.firstChild.style.paddingTop = 4 + "px";
+      theAudioMute.firstChild.innerHTML = "Mute";
+    }
+    else {
+      theAudio.muted = true;
+      theAudioMute.firstChild.style.fontSize = 16 + "px";
+      theAudioMute.firstChild.style.paddingTop = 8 + "px";
+      theAudioMute.firstChild.innerHTML = "Unmute";
+    }
+}
+
 function rewindVideo() {
   entVideo.currentTime = 0;
 }
@@ -53,6 +68,9 @@ function rewindVideo() {
 function setProg() {
   let barratio = entVideo.currentTime / entVideo.duration;
   prog.style.width = barratio * progbar.offsetWidth + "px";
+  if (barratio > 0.97) {
+    ppButton.firstChild.src = "./resources/play-button.png";
+  }
 }
 
 function progJump(e) {
@@ -60,6 +78,10 @@ function progJump(e) {
   let startpos = progbar.getBoundingClientRect().left;
   let progratio = (xpos - startpos) / progbar.offsetWidth;
   entVideo.currentTime = entVideo.duration * progratio;
+  if (entVideo.paused === true) {
+    entVideo.play();
+    ppButton.firstChild.src = "./resources/pause-button.png";
+  }
   setProg();
 }
 
@@ -85,13 +107,16 @@ function bindControl() {
   muteButton.addEventListener("click",muteOrUnmute);
   rwButton.addEventListener("click",rewindVideo);
 
-  progression = setInterval(setProg,300);
+  progression = setInterval(setProg,200);
   progbar.addEventListener("click", progJump);
 
   window.addEventListener("resize",setPosition);
 
   paper = new Raphael(document.querySelector(".svg"),800,480);
   theAudio = document.querySelector(".svg-audio audio");
+  theAudio.load();
+  theAudioMute = document.querySelector(".svg-mute");
+  theAudioMute.addEventListener("click",muteAudioShell);
   setProg();
 };
 

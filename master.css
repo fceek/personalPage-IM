@@ -298,6 +298,10 @@ span.capital {
 
 /* animation */
 
+.animation h1 {
+  padding-bottom: 12px;
+}
+
 .svg {
   width: 800px;
   height: 480px;
@@ -306,4 +310,17 @@ span.capital {
 
 .svg-audio {
   display: none;
+}
+
+.svg-mute {
+  height: 36px;
+  width: 80px;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.svg-mute p {
+  padding-top: 4px;
+  font-size: 24px;
+  text-align: center;
 }
