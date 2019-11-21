@@ -117,6 +117,7 @@ function bindControl() {
   theAudio.load();
   theAudioMute = document.querySelector(".svg-mute");
   theAudioMute.addEventListener("click",muteAudioShell);
+  theAudio.pause();
   setProg();
 };
 
